@@ -6,6 +6,7 @@ import ExpenseIncome from './Kind/ExpenseIncome';
 import ExpenseTags from './Kind/ExpenseTags';
 import NetWorth from './Kind/NetWorth';
 import './index.css';
+import ExpenseByTagsPie from './Kind/ExpenseTagPie';
 
 class Report extends React.Component {
   render() {
@@ -26,6 +27,9 @@ class Report extends React.Component {
         return <NetWorth {...this.props} />;
       case ReportKindT.ExpenseTags:
         return <ExpenseTags {...this.props} />;
+      case ReportKindT.ExpenseByTagsPie:
+        console.log(this.props);
+        return <ExpenseByTagsPie {...this.props} />;
       default:
         return 'Not available';
     }

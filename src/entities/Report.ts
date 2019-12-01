@@ -14,6 +14,7 @@ import ExpenseIncomeDataLoader from './Report/ExpenseIncomeData';
 import NetWorthDataLoader from './Report/NetWorthData';
 import ExpenseTagsDataLoader from './Report/ExpenseTagsData';
 import ExpenseTagsPieDataLoader from './Report/ExpenseTagsPieData';
+import IncomeTagsPieDataLoader from './Report/IncomeTagsPieData';
 
 export interface ReportDataT {
   labels: string[];
@@ -35,6 +36,7 @@ export interface ReportStateT {
 export enum ReportKindT {
   ExpenseIncome = 'expense_income',
   ExpenseByTagsPie = 'expense_tags_pie',
+  IncomeByTagsPie = 'income_tags_pie',
   ExpenseTags = 'expense_tags',
   NetWorth = 'net_worth'
 }
@@ -95,6 +97,11 @@ export function kindOptions() {
       text: 'Expense by Tags Pie'
     },
     {
+      key: ReportKindT.IncomeByTagsPie,
+      value: ReportKindT.IncomeByTagsPie,
+      text: 'Income by Tags Pie'
+    },
+    {
       key: ReportKindT.NetWorth,
       value: ReportKindT.NetWorth,
       text: 'Net Worth'
@@ -137,6 +144,7 @@ type DataLoaderMapT = { [kind in ReportKindT]: DataLoaderFn };
 const DataLoaderMap: DataLoaderMapT = {
   [ReportKindT.ExpenseIncome]: ExpenseIncomeDataLoader,
   [ReportKindT.ExpenseByTagsPie] : ExpenseTagsPieDataLoader,
+  [ReportKindT.IncomeByTagsPie] : IncomeTagsPieDataLoader,
   [ReportKindT.ExpenseTags]: ExpenseTagsDataLoader,
   [ReportKindT.NetWorth]: NetWorthDataLoader
 };

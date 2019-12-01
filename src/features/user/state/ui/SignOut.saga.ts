@@ -7,6 +7,7 @@ import AccountsStorage from 'util/storage/accounts';
 import SettingsStorage from 'util/storage/settings';
 import TagsStorage from 'util/storage/tags';
 import TransactionsStorage from 'util/storage/transactions';
+import { destroyAccountsDB, destroySettingsDB, destroyTagsDB, destroyTransactionsDB }from 'util/storage/pouchdb.js'
 
 export function* signOutSaga() {
   try {
@@ -15,7 +16,14 @@ export function* signOutSaga() {
     yield call(TagsStorage.destroy);
     yield call(TransactionsStorage.destroy);
     yield call([localStorage, 'clear']);
-
+    
+    
+    yield destroyTransactionsDB()
+    yield destroyTagsDB();
+    yield destroyAccountsDB();
+    yield destroySettingsDB();
+    
+    
     yield put(signOutSuccess());
     yield isDemoUser();
     yield loadSetting();

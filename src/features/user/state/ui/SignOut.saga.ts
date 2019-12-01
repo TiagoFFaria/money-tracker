@@ -12,17 +12,8 @@ import { destroyAccountsDB, destroySettingsDB, destroyTagsDB, destroyTransaction
 export function* signOutSaga() {
   try {
     yield call(AccountsStorage.destroy);
-    yield call(SettingsStorage.destroy);
     yield call(TagsStorage.destroy);
     yield call(TransactionsStorage.destroy);
-    yield call([localStorage, 'clear']);
-    
-    
-    yield destroyTransactionsDB()
-    yield destroyTagsDB();
-    yield destroyAccountsDB();
-    yield destroySettingsDB();
-    
     
     yield put(signOutSuccess());
     yield isDemoUser();

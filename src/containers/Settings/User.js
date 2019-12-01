@@ -39,7 +39,7 @@ class User extends React.Component {
   signOutButtonLabel() {
     if (this.props.isDemo) return 'Reset demo';
 
-    return this.props.isAuthenticated ? 'Reset Account' : 'Delete Account data';
+    return this.props.isAuthenticated ? 'Reset Account' : 'Reset Account data';
   }
 
   signOutButtonIcon() {

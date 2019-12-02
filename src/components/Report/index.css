@@ -30,6 +30,30 @@
   fill: #7cb342;
 }
 
+.mt-report-expense-tag-pie .ct-series-a .ct-slice-pie {
+  fill: #6dd899;
+}
+
+.mt-report-expense-tag-pie .ct-series-b .ct-slice-pie {
+  fill: #e8f856;
+}
+
+.mt-report-expense-tag-pie .ct-series-c .ct-slice-pie {
+  fill: #56bdf8;
+}
+
+.mt-report-income-tag-pie .ct-series-a .ct-slice-pie {
+  fill: #6dd899;
+}
+
+.mt-report-income-tag-pie .ct-series-b .ct-slice-pie {
+  fill: #e8f856;
+}
+
+.mt-report-income-tag-pie .ct-series-c .ct-slice-pie {
+  fill: #56bdf8;
+}
+
 .chartist-tooltip {
   background: #d4d4d5;
   border-radius: 3px;
